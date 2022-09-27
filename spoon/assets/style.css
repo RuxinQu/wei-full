@@ -1,0 +1,91 @@
+:root {
+    --bg-banner: #81a684;
+    --bg-card: #95d7ae;
+}
+
+
+html {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+
+.user-input {
+    height: 30vh;
+    background-color: var(--bg-banner);
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+
+}
+
+input {
+    font-size: 2rem;
+    width: 60%;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.search {
+    width: 100px;
+    height: 60px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+
+
+.output {
+    height: 70vh;
+    overflow-y: scroll;
+    background-image: url(./img/bg-search-ingredient.jpg);
+    background-size: cover;
+    
+}
+
+
+.card {
+    background-color: var(--bg-card);
+    height: 400px;
+    width: 400px;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.before,
+.after {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: lightgrey;
+}
+
+@media only screen and (max-width: 800px){
+    .output{
+        flex-wrap: wrap;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .user-input {
+        height: 20vh;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+    input,
+    .search{
+        height: 40px;
+    }
+}
