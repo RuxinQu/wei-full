@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
+
 <body>
+    <!---------------------- user input area ---------------------->
     <div class="user-input">
-        <label for="ingredient">Ingredient you wanna put</label>
-        <input id="ingredient" type="text">
-        <button class="btn">search</button>
+
+        <h1 class="pt-5 has-text-centered">I am hungry for:</h1>
+        <div class="mt-3 search-box">
+            <input id="ingredient" type="text" placeholder="Enter here, one ingredient each time">
+            <button class="button search">search</button>
+        </div>
     </div>
-    <div class="output"></div>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <!---------------------- search output area ---------------------->
+    <div class="output is-flex is-justify-content-space-evenly is-align-items-center"></div>
+
+    <!--------------------- search not found modal --------------------->
+    <div id="modal" class="modal has-text-centered">
+        <div class="modal-background"></div>
+        <div class="modal-card mt-6">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Search Not Found</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <p>Oops! Looks like we don't have that.</p>
+                <p>Would you like to try something else?</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="./assets/script.js"></script>
 </body>
+
 </html>
