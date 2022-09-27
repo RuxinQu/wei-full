@@ -1,8 +1,7 @@
 :root {
     --bg-banner: #81a684;
-    --bg-card: #95d7ae;
+    --bg-card: hsl(143, 20%, 71%);
 }
-
 
 html {
     font-size: 16px;
@@ -12,7 +11,7 @@ h1 {
     font-size: 3rem;
 }
 
-
+/* ----------------------user input area---------------------- */
 .user-input {
     height: 30vh;
     background-color: var(--bg-banner);
@@ -21,7 +20,6 @@ h1 {
 .search-box {
     display: flex;
     justify-content: center;
-
 }
 
 input {
@@ -39,16 +37,13 @@ input {
     margin-left: 10px;
 }
 
-
-
+/* ----------------------search result output area---------------------- */
 .output {
     height: 70vh;
     overflow-y: scroll;
     background-image: url(./img/bg-search-ingredient.jpg);
     background-size: cover;
-    
 }
-
 
 .card {
     background-color: var(--bg-card);
@@ -58,8 +53,19 @@ input {
     margin: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
+    border-radius: 20px;
+}
+
+.card-title{
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+img{
+    border-radius: 10px;
 }
 
 .before,
@@ -69,23 +75,30 @@ input {
     background-color: lightgrey;
 }
 
+.card:hover{
+    cursor: pointer;
+}
+
+
 @media only screen and (max-width: 800px){
     .output{
         flex-wrap: wrap;
     }
 }
 
-
 @media only screen and (max-width: 600px) {
     .user-input {
         height: 20vh;
     }
-
+    .output{
+        height: 80vh;
+    }
     h1 {
         font-size: 2rem;
     }
     input,
     .search{
         height: 40px;
+        font-size: 1.5rem;
     }
 }
