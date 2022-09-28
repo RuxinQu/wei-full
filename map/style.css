@@ -1,0 +1,45 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+    background-image: url(./bg-restaurant.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: 'Courgette', sans-serif;
+    color: #fff;
+
+}
+
+header {
+    padding-bottom: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.255);
+}
+
+form {
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+#input {
+    height: 75px;
+    width: 100%;
+    font-size: 2rem;
+    border-radius: 10px 10px 0 0;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+footer a{
+    color: #fff;
+}
