@@ -32,3 +32,8 @@ header p {
     transform: scale(1.02);
 }
 
+center {
+    display: center;
+    background-color: aqua;
+    height: 200px;
+}
