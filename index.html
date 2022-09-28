@@ -1,118 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wei Full</title>
-    
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <div class="navbar">
-        <h1 class="navbar-brand">Wei Full</h1>
+    <div class="container is-flex is-flex-direction-column is-justify-content-space-around is-align-content-center">
+        <!-- Bulma uses most things as a class and in the html as opposed to a css style sheet, fyi -->
+
+        <!------------------- header area --------------------->
+        <header>
+            <h1 class="is-size-1 has-text-centered has-text-weight-bold">HUNGRY? Let us help!</h1>
+            <p class="has-text-centered"> Would you prefer to go out or stay in?</p>
+        </header>
+
+        <!---------------- main section cards container ---------------->
+        <main>
+            <div class="card-container">
+                <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
+                    <div class="card is-flex is-justify-content-center is-align-items-center" id="out">
+                        <h2>Go out! </h2>
+                    </div>
+                    <div class="card is-flex is-justify-content-center is-align-items-center" id="in">
+                        <h2>Staying in</h2>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="has-text-centered">
+            <p>Brought to you by the team at <strong>DR. THK</strong> We hope you enjoyed your meal.</p>
+        </footer>
     </div>
+    <script src="./assets/js/script.js"></script>
 
-    <!-- <div class="message">
-        <div class="message-header">
-            <div class="block"></div>
-            <p>Hungry? Let us help!</p>
-            <div class="block"></div>
-        </div>
-        <div class="message-body">
-            <div class="block"></div>
-            <p>Would you like to <strong>cook at home</strong> or <strong>dine out?</strong></p>
-            <div class="block"></div>
-        </div>
-    </div> -->
-
-    <div class="card">
-        <div class="card-content">
-            <p class="title">
-                Hungry? let us help!
-            </p>
-            <div class="block"></div>
-            <p class="subtitle">
-                Would you like to <strong>Cook at Home</strong> or <strong>Dine Out</strong>?
-            </p>
-            <div class="block"></div>
-
-            <!-- <button class="button card-footer-item">Cook at home</button> -->
-            <!-- <button class="button card-footer-item">Dine out</button> -->
-
-
-    <div class="columns is-gapless">
-        <button class="button is-large column is-one-quarter" id="recipes">
-            Cook at home
-        </button>
-        <button class="button is-large column is-one-quarter" id="restaurants">
-            Dine out
-        </button>
-
-    </div>
-
-
-        </div>
-    </div>
-
-    <div class="block"></div>
-    <div class="block"></div>
-    <div class="block"></div>
-    <div class="block"></div>
-
-    
-
-<!-- testing for now, left everything commented out here to revert if necessary -->
-
-
-    <!-- Bulma uses most things as a class and in the html as opposed to a css style sheet, fyi -->
-<!-- <br>
-    <h1 class="is-size-1 has-text-centered has-text-weight-bold has-background-info-dark has-text-danger">
-        HUNGRY?  Let us help...</h1>
-        <br><br>
-   
-        <div class="centered">
-            <section class="cards">
-                <article class="card">
-                   <p>Lets go out! </p>
-                </article>
-            
-    <article class="card">
-                   <p >I feel like staying in...</p>
-            </article>
-        </div>
-    </section>
-</div>
-
-    <h2 class="is-size-3 has-text-centered"> Would you prefer to go out or stay in?</h2>
-    <br><br>
-    <h3 class="is-size-4 has-text-centered">Either way, thats an excellet choice</h3>
-    
-
-<div></div>
-<div></div>
-
-
-<br><br><br>
-<footer class="is-size-4 has-text-centered"> Brought to you by the team at <strong>DR. THK</strong> We hope you enjoyed your meal. </footer> -->
-
-
-
-<footer>
-
-      <p class="is-size-4 has-text-centered"> Brought to you by the team at <strong>DR. THK</strong> We hope you enjoyed your meal. </p>
-      <a class="navbar-item" href="https://bulma.io">
-        <p>Powered by:</p>
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-    </a>
-
-</footer>
-
-<script src="./assets/js/script.js"></script>
 </body>
-</html>
 
+</html>

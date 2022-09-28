@@ -5,22 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Google Map</title>
+    <title>Restaurant</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
         #map {
-            height: 400px;
+            height: 450px;
             width: 100%;
+            border-radius: 0 0 10px 10px;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <h1>My Google Map</h1>
-    <input id="input" style="height: 75px; width: 100%; font-size: 16px;">
-    <div id="map"></div>
+    <header>
+        <h1 class="pt-5 has-text-centered">Find a restaurant! </h1>
+    </header>
+    <form>
+        <input id="input">
+        <div id="map"></div>
+    </form>
+    <footer>
+        <a href="https://mapsplatform.google.com">Data from Google Map API</a>
+    </footer>
 
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaByHIVWRDbEfoeZkQcrLQg1upeS4Lza0&libraries=places&callback=initMap">
         </script>
