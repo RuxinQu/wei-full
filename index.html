@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./assets/css/style.css"></link>
-
+    <title>Wei Full</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
+    <div class="container is-flex is-flex-direction-column is-justify-content-space-around is-align-content-center">
+        <!-- Bulma uses most things as a class and in the html as opposed to a css style sheet, fyi -->
 
-    <!-- Bulma uses most things as a class and in the html as opposed to a css style sheet, fyi -->
-<br>
-    <h1 class="is-size-1 has-text-centered has-text-weight-bold has-background-info-dark has-text-danger">
-        HUNGRY?  Let us help...</h1>
-        <br><br>
-   
-        <div class="centered"
-            <section class="cards">
-                <article class="card">
-                   <p>Lets go out! </p>
-                </article><!-- /card-one -->
- 
-    <article class="card">
-                   <p >I feel like staying in...</p>
-            </article><!-- /card-two -->
- 
-    </section>
-</div>
+        <!------------------- header area --------------------->
+        <header>
+            <h1 class="is-size-1 has-text-centered has-text-weight-bold">HUNGRY? Let us help!</h1>
+            <p class="has-text-centered"> Would you prefer to go out or stay in?</p>
+        </header>
 
-    <h2 class="is-size-3 has-text-centered"> Would you prefer to go out or stay in?</h2>
-    <br><br>
-    <h3 class="is-size-4 has-text-centered">Either way, thats an excellet choice</h3>
-    
+        <!---------------- main section cards container ---------------->
+        <main>
+            <div class="card-container">
+                <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
+                    <div class="card is-flex is-justify-content-center is-align-items-center" id="out">
+                        <h2>Go out! </h2>
+                    </div>
+                    <div class="card is-flex is-justify-content-center is-align-items-center" id="in">
+                        <h2>Staying in</h2>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-<div></div>
-<div></div>
+        <footer class="has-text-centered">
+            <p>Brought to you by the team at <strong>DR. THK</strong> We hope you enjoyed your meal.</p>
+        </footer>
+    </div>
+    <script src="./assets/js/script.js"></script>
 
-
-<br><br><br>
-<footer class="is-size-4 has-text-centered"> Brought to you by the team at <strong>DR. THK</strong> We hope you enjoyed your meal. </footer>
-
-<script src="./assets/js/script.js"></script>
 </body>
-</html>
 
+</html>

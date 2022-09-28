@@ -1,5 +1,35 @@
-.cards {
-    display: flex;
-    justify-content: space-between;
+html{
+    font-size: 16px;
+}
+
+h2{
+    font-size: 3rem;
+    font-family: 'Courgette', sans-serif;
+}
+
+p{
+    font-size: 0.8rem;
+}
+
+.container{
+    height: 100vh;
+}
+
+header p {
+    font-size: 1.4rem;
+}
+
+.card{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
     background-color: aqua;
- }
+    margin: 10px;
+}
+
+.card:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+
