@@ -11,7 +11,7 @@ p{
     font-size: 0.8rem;
 }
 
-.container{
+.card{
     height: 100vh;
 }
 
@@ -19,11 +19,11 @@ header p {
     font-size: 1.4rem;
 }
 
-.card{
-    width: 300px;
-    height: 300px;
+.card-content{
+    width: 200px;
+    height: 200px;
     border-radius: 10px;
-    background-color: aqua;
+    background-color: rgb(132, 194, 179);
     margin: 10px;
 }
 
@@ -32,3 +32,7 @@ header p {
     transform: scale(1.02);
 }
 
+#in{
+  position: absolute;
+  left: 77%;
+}
