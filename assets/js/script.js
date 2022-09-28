@@ -7,3 +7,6 @@ document.getElementById('in').addEventListener('click',()=>{
 document.getElementById('out').addEventListener('click',()=>{
     window.location.assign('./map/map.html')
 })
+
+var time = moment();
+$('#time').text(time.format('MMM Do, YYYY, h:mm a'));
