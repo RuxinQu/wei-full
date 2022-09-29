@@ -63,10 +63,7 @@ header p {
     display: block;
     background-color: rgb(132, 194, 179);
     height: 150px;
+    padding: 20px;
+    margin: 10px;
 }
 
-.float-right {
-    display: block;
-    float:inline-end;
-
-}
