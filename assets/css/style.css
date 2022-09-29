@@ -1,34 +1,86 @@
-html{
+:root {
+    --bg-header-footer: rgba(0, 0, 0, 0.459);
+    --font-color: #f5f5dc;
+    --bg-card:hsla(165, 33%, 64%, 0.95);
+}
+
+html {
     font-size: 16px;
 }
 
-h2{
+.main-page-body::before {
+    content: " ";
+    background-image: url('../images/bg-main-page.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+}
+
+h2 {
     font-size: 3rem;
     font-family: 'Courgette', sans-serif;
 }
 
-p{
-    font-size: 0.8rem;
-}
-
-.container{
-    height: 100vh;
-}
-
-header p {
+h4 {
     font-size: 1.4rem;
 }
 
-.card{
-    width: 300px;
-    height: 300px;
+p {
+    font-size: 0.8rem;
+}
+
+.main-container {
+    height: 100vh;
+    position: relative;
+
+}
+
+header {
+    color: var(--font-color);
+    padding: 1.5rem;
+    background-color: var(--bg-header-footer);
+}
+
+.card {
+    width: 250px;
+    height: 250px;
     border-radius: 10px;
-    background-color: aqua;
+    background-color:var(--bg-card);
     margin: 10px;
 }
 
-.card:hover{
+.card:hover {
     cursor: pointer;
     transform: scale(1.02);
 }
 
+/* ----------------footer area---------------- */
+.main-page-footer {
+    color: var(--font-color);
+    background-color: var(--bg-header-footer);
+}
+
+.main-page-footer span {
+    font-weight: 1000;
+}
+
+.main-page-footer a{
+    color: var(--font-color);
+}
+.main-page-footer a:hover{
+    color: var(--bg-card);
+}
+@media only screen and (max-width: 900px) {
+    .card {
+        width: 200px;
+        height: 200px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
