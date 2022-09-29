@@ -7,7 +7,7 @@ $(document).ready(() => {
     const findByIngredient = async () => {
         const ingredient = $('#ingredient').val();
         const endPoint = `/recipes/findByIngredients`;
-        const requestParams = `?apiKey=${apiKey2}&ingredients=${ingredient}&number=6`;
+        const requestParams = `?apiKey=${apiKey}&ingredients=${ingredient}&number=6`;
         const urlToFetch = `${baseUrl}${endPoint}${requestParams}`;
         try {
             const response = await fetch(urlToFetch);
@@ -23,13 +23,18 @@ $(document).ready(() => {
     }
 
     // save the recipe id to localStorage with the relavent title as key
+    let myRecipes = [];
     const saveRecipeId = (result) => {
         for (let x = 0; x < result.length; x++) {
             const idKey = result[x].title;
             const idValue = result[x].id;
             localStorage.setItem(idKey, idValue);
-        }
-    }
+            console.log(idKey);
+            myRecipes.push(JSON.parse(localStorage.getItem('idKey')));
+            localStorage.setItem('idKey', JSON.stringify(myRecipes));
+            console.log(localStorage);
+    }}
+
 
     // create empty search result cards 
     const createCards = () => {
@@ -109,8 +114,11 @@ $(document).ready(() => {
     })
 
     //click on the card will trigger the renderDetailLink function and redirect to spoonacular website
+
     $('.output').on('click', '.card', (event) => {
         renderDetailLink(event);
     })
 
 })
+
+
