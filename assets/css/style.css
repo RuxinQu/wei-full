@@ -1,5 +1,23 @@
+:root {
+    --bg-header-footer: rgba(0, 0, 0, 0.459);
+    --font-color: #f5f5dc;
+    --bg-card:hsla(165, 33%, 64%, 0.95);
+}
+
 html {
     font-size: 16px;
+}
+
+.main-page-body::before {
+    content: " ";
+    background-image: url('../images/bg-main-page.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
 }
 
 h2 {
@@ -7,55 +25,64 @@ h2 {
     font-family: 'Courgette', sans-serif;
 }
 
+h4 {
+    font-size: 1.4rem;
+}
+
 p {
     font-size: 0.8rem;
 }
 
-.card {
+.main-container {
     height: 100vh;
+    position: relative;
+
 }
 
-img {
-    height: 575px;
-    width: 1200px;
+header {
+    color: var(--font-color);
+    padding: 1.5rem;
+    background-color: var(--bg-header-footer);
 }
 
-#time {
-    font-size: x-large;
-}
-
-header p {
-    font-size: 1.4rem;
-}
-
-.card-content {
-    width: 200px;
-    height: 200px;
+.card {
+    width: 250px;
+    height: 250px;
     border-radius: 10px;
-    background-color: rgb(132, 194, 179);
+    background-color:var(--bg-card);
     margin: 10px;
 
 }
 
-/* changed to card-content so only the boxes come forward */
-
-.card-content:hover {
+.card:hover {
     cursor: pointer;
     transform: scale(1.02);
 }
 
-#in {
-    position: absolute;
-    left: 65%;
-    margin-top: 13%;
-
+/* ----------------footer area---------------- */
+.main-page-footer {
+    color: var(--font-color);
+    background-color: var(--bg-header-footer);
 }
 
-#out {
-    position: absolute;
-    left: 20%;
-    margin-top: 13%;
+.main-page-footer span {
+    font-weight: 1000;
 }
 
+.main-page-footer a{
+    color: var(--font-color);
+}
+.main-page-footer a:hover{
+    color: var(--bg-card);
+}
+@media only screen and (max-width: 900px) {
+    .card {
+        width: 200px;
+        height: 200px;
+    }
 
+    h2 {
+        font-size: 1.5rem;
+    }
+}
 
