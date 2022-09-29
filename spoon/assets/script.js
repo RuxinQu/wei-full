@@ -23,18 +23,33 @@ $(document).ready(() => {
     }
 
     // save the recipe id to localStorage with the relavent title as key
-    let myRecipes = [];
     const saveRecipeId = (result) => {
         for (let x = 0; x < result.length; x++) {
             const idKey = result[x].title;
             const idValue = result[x].id;
             localStorage.setItem(idKey, idValue);
             console.log(idKey);
-            myRecipes.push(JSON.parse(localStorage.getItem('idKey')));
-            localStorage.setItem('idKey', JSON.stringify(myRecipes));
-            console.log(localStorage);
-    }}
 
+        }
+    }
+
+    //   let favoriteArr = JSON.parse(localStorage.getItem('favorite')) || [];
+
+    //   const saveRecipes = (recipes) => {
+    //     $('.saved').text('recipes');
+    //     if (favoriteArr.include(recipes)) {
+    //         return ''
+    //     } else {
+    //         favoriteArr.push(recipes);
+    //         const recipeEl = $('<div class="recipe-value"> ${recipes} </div>')
+    //         recipeEl.attr('id', `${recipes}`)
+    //     }
+    //   }
+
+
+
+    // click on key set item to favorite 
+    // value is the title and the id
 
     // create empty search result cards 
     const createCards = () => {
@@ -121,4 +136,18 @@ $(document).ready(() => {
 
 })
 
+//create function that will make local storage. 
+//this event listener is waiting for the person to click on a card to save it to local storage 
+const myRecipes = document.getElementsByClassName('saved');
 
+
+function myRecipies() {
+    const savingRecipes = [];
+    const favKey = result[x].title;
+    console.log(savingRecipes);
+    console.log(favKey);
+
+}
+myRecipes.addEventListener('click', '.card');
+
+renderMyRecipes();
