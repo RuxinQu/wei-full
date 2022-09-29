@@ -12,6 +12,10 @@ html {
     font-size: 16px;
 }
 
+body {
+    font-family: 'Courgette', sans-serif;
+}
+
 .main-page-body::before {
     content: " ";
     background-image: url('../images/bg-main-page.jpg');
@@ -33,7 +37,7 @@ h4 {
 }
 
 p {
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .main-container {
