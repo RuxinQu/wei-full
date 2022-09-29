@@ -65,7 +65,7 @@ $(document).ready(() => {
         const idKey = $(event.currentTarget).find('.card-title').text() || $(event.currentTarget).text() || $(event.currentTarget).siblings('.card-title').text()
         const idValue = localStorage.getItem(idKey);
         const url = `https://spoonacular.com/recipes/${idKey.split(' ').join('-')}-${idValue}`;
-        window.location.assign(url);
+        window.open(url);
     }
 
     // the search function , when the ingredient is not find, a modal will be issued
