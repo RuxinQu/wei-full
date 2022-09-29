@@ -17,11 +17,6 @@
     <div class="container is-flex is-flex-direction-column is-justify-content-space-around is-align-content-center">
         <!-- Bulma uses most things as a class and in the html as opposed to a css style sheet, fyi -->
 
-        <!------------------- header area --------------------->
-        <header>
-            <h1 class="is-size-1 has-text-centered has-text-weight-bold">HUNGRY? Let us help!</h1>
-            <p class="has-text-centered"> Would you prefer to go out or stay in?</p>
-        </header>
 
         <!---------------- main section cards container ---------------->
         <main>
@@ -29,26 +24,45 @@
             <h1
                 class="is-size-1 has-text-centered has-text-weight-bold has-background-primary-dark has-text-danger-light">
                 HUNGRY? Let us help...</h1>
+            <p class="has-text-centered" id="time"></p>
 
-            <div class="card">
-                <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
-                    <figure class="card-image">
-                        <img src="assets\images\reastaurant.jpg" alt="image of chic restaurant">
-                    </figure>
-                    <div class="card-content is-overlay is-pulled-left  is-flex is-justify-content-center is-align-items-center" id="out">
-                        <h2>Go out! </h2>
-                    </div>
-                    <div class="card-content is-overlay is-pulled-right  is-flex is-justify-content-center is-align-items-center" id="in">
-                        <h2>Staying in</h2>
+            <div id="weathercontainer">
+                <h3 class="title">Check the Weather Before You Decide: </h3>
+                <input type="text" class="city">
+                <button class="search">Search</button>
+                <div class="float-right">
+                    <div class="day">
+                        <p class="icon"></p>
+                        <p class="temp"></p>
+                        <p class="condition"></p>
                     </div>
                 </div>
             </div>
-        </main>
-
-        <footer class="has-text-centered">
-            <p>Brought to you by the team at <strong>DR. THK</strong> We hope you enjoyed your meal.</p>
-        </footer>
     </div>
+
+    <div class="card">
+        <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
+            <figure class="card-image">
+                <img src="assets\images\reastaurant.jpg" alt="image of chic restaurant">
+            </figure>
+            <div class="card-content is-overlay is-pulled-left  is-flex is-justify-content-center is-align-items-center"
+                id="out">
+                <h2>Go out! </h2>
+            </div>
+            <div class="card-content is-overlay is-pulled-right  is-flex is-justify-content-center is-align-items-center"
+                id="in">
+                <h2>Staying in</h2>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer class="has-text-centered">
+        <p>Brought to you by the team at <strong>DR. THK.</strong> We hope you enjoyed your meal!</p>
+    </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 
 </body>

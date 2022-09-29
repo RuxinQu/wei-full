@@ -1,38 +1,69 @@
-html{
+html {
     font-size: 16px;
 }
 
-h2{
+h2 {
     font-size: 3rem;
     font-family: 'Courgette', sans-serif;
 }
 
-p{
+p {
     font-size: 0.8rem;
 }
 
-.card{
+.card {
     height: 100vh;
+}
+
+img {
+    height: 575px;
+    width: 1200px;
+}
+
+#time {
+    font-size: x-large;
 }
 
 header p {
     font-size: 1.4rem;
 }
 
-.card-content{
+.card-content {
     width: 200px;
     height: 200px;
     border-radius: 10px;
     background-color: rgb(132, 194, 179);
     margin: 10px;
+
 }
 
-.card:hover{
+/* changed to card-content so only the boxes come forward */
+
+.card-content:hover {
     cursor: pointer;
     transform: scale(1.02);
 }
 
-#in{
-  position: absolute;
-  left: 77%;
+#in {
+    position: absolute;
+    left: 65%;
+    margin-top: 13%;
+
 }
+
+#out {
+    position: absolute;
+    left: 20%;
+    margin-top: 13%;
+}
+
+
+
+#weathercontainer {
+    display: block;
+    background-color: rgb(132, 194, 179);
+    height: 150px;
+    padding: 20px;
+    margin: 10px;
+}
+
