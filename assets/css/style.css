@@ -51,6 +51,7 @@ header {
     border-radius: 10px;
     background-color:var(--bg-card);
     margin: 10px;
+
 }
 
 .card:hover {
@@ -84,3 +85,4 @@ header {
         font-size: 1.5rem;
     }
 }
+
