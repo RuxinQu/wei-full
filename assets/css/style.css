@@ -8,6 +8,14 @@ body {
     font-family: 'Courgette', sans-serif;
 }
 
+.saved {
+display: block;
+padding: 5px;
+margin: 5px;
+max-width: 150px;
+font-size: 20px;
+}
+
 html {
     font-size: 16px;
 }
