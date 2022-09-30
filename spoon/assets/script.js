@@ -2,7 +2,6 @@ $(document).ready(() => {
     const apiKey = `6e8b2acac15a42fc99b75f6f8e92662f`;
     const apiKey2 = `0abc5e5eba504379adc2ea1c904d41f2`
     const baseUrl = `https://api.spoonacular.com`
-    const userRecipesDiv = document.querySelector('#userRecipes');
     var storedRecipes = localStorage.getItem('userRecipes');
 
     if (!storedRecipes) {
@@ -14,9 +13,28 @@ $(document).ready(() => {
     function saveRecipe(recipeValue) {
         storedRecipes.push(recipeValue);
         localStorage.setItem('userRecipes', JSON.stringify(storedRecipes))
-        
-        
     }
+
+    displayStoredRecipes();
+
+    function displayStoredRecipes() {
+        for (let x = 0; x < storedRecipes.length; x++) {
+            const recipeTitle = $(`<a>`);
+            recipeTitle.text(storedRecipes[x].title).addClass('dropdown-item');
+            $('#dropdown-menu .savedRecipes').append(recipeTitle);
+
+        }
+        
+        //anchor tag with dropdown item class and recipe name as text 
+        //create html elements for each. dropdown give a class 
+        //for loop for each object in array, from stored recipes 
+
+
+        //FUTURE: click = take user to spoonacular 
+        //
+
+    }
+    //for each stored recipe add a element to a saved recipes list  
 
     // the fetch request
     const findByIngredient = async () => {
@@ -154,12 +172,12 @@ function myRecipes(event) {
     const savingRecipes = [];
     const savingRecipesKey = 'favorites';
     localStorage.setItem(savingRecipesKey, savingRecipes);
-    
+
     savingRecipes.push(titleEl);
 
 
     // localStorage.getItem(savingRecipesKey);
-    
+
     console.log(localStorage);
 
 }
