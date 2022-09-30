@@ -2,6 +2,21 @@ $(document).ready(() => {
     const apiKey = `6e8b2acac15a42fc99b75f6f8e92662f`;
     const apiKey2 = `0abc5e5eba504379adc2ea1c904d41f2`
     const baseUrl = `https://api.spoonacular.com`
+    const userRecipesDiv = document.querySelector('#userRecipes');
+    var storedRecipes = localStorage.getItem('userRecipes');
+
+    if (!storedRecipes) {
+        storedRecipes = [];
+    } else {
+        storedRecipes = JSON.parse(storedRecipes);
+    }
+
+    function saveRecipe(recipeValue) {
+        storedRecipes.push(recipeValue);
+        localStorage.setItem('userRecipes', JSON.stringify(storedRecipes))
+        
+        
+    }
 
     // the fetch request
     const findByIngredient = async () => {
@@ -61,7 +76,13 @@ $(document).ready(() => {
             button.addClass('saveBtn').text('Save for later');
             $(`#card${x + 1}`).append(titleEl).append(img).append(button);
             index += 1;
-            button.click(myRecipes);
+            // button.click(myRecipes);
+            function handleSaveButtonClick() {
+                saveRecipe(result[index]);
+            }
+            button.click(handleSaveButtonClick);
+            // add event handler function 
+
         }
 
     }
@@ -125,13 +146,16 @@ $(document).ready(() => {
 //Dorian uncomment this for the local storage.
 //create function that will make local storage. 
 //this event listener is waiting for the person to click on a card to save it to local storage 
+function saveRecipe() {
+
+}
 function myRecipes(event) {
     event.preventDefault();
     const savingRecipes = [];
     const savingRecipesKey = 'favorites';
     localStorage.setItem(savingRecipesKey, savingRecipes);
-
-    savingRecipes.push('');
+    
+    savingRecipes.push(titleEl);
 
 
     // localStorage.getItem(savingRecipesKey);
