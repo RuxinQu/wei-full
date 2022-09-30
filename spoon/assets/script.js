@@ -57,9 +57,13 @@ $(document).ready(() => {
                 alt: 'recipe image',
                 style: 'width: 200px; height: 200px;'
             }).addClass('card-img');
-            $(`#card${x + 1}`).append(titleEl).append(img);
+            const button = $('<button>');
+            button.addClass('saveBtn').text('Save for later');
+            $(`#card${x + 1}`).append(titleEl).append(img).append(button);
             index += 1;
+            button.click(myRecipes);
         }
+
     }
 
     // when click on each card, take the title from the triggered event and get the recipe value based on the title(the key in localStorage)
@@ -110,31 +114,28 @@ $(document).ready(() => {
         $('.modal').hide();
     })
 
-    //click on the card will trigger the renderDetailLink function and redirect to spoonacular website
+    //click on the card will trigger the renderDetailLink function and redirect to spoonacular website. Clicking image redirects to spooacular.
 
-    $('.output').on('click', '.card', (event) => {
+    $('.output').on('click', '.card-img', (event) => {
         renderDetailLink(event);
     })
 
 })
 
-
-
 //Dorian uncomment this for the local storage.
 //create function that will make local storage. 
 //this event listener is waiting for the person to click on a card to save it to local storage 
-// const myRecipes = document.getElementsByClassName('saved');
+function myRecipes(event) {
+    event.preventDefault();
+    const savingRecipes = [];
+    const savingRecipesKey = 'favorites';
+    localStorage.setItem(savingRecipesKey, savingRecipes);
+
+    savingRecipes.push('');
 
 
-// function myRecipies() {
-   
-//     const savingRecipes = [];
-//     const idKey = result[x].title;
-//     localStorage.setItem(idKey, JSON.stringify(savingRecipes));
-//     console.log(localStorage.getItem(idKey));
+    // localStorage.getItem(savingRecipesKey);
     
-// }
+    console.log(localStorage);
 
-// '.card'.addEventListener('click', '.card');
-
-// renderMyRecipes();
+}
