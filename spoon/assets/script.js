@@ -24,12 +24,6 @@ $(document).ready(() => {
             $('#dropdown-menu .savedRecipes').append(recipeTitle);
 
         }
-        
-        //anchor tag with dropdown item class and recipe name as text 
-        //create html elements for each. dropdown give a class 
-        //for loop for each object in array, from stored recipes 
-
-
         //FUTURE: click = take user to spoonacular 
         //
 
