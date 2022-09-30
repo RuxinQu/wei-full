@@ -155,23 +155,4 @@ $(document).ready(() => {
 
 })
 
-//Dorian uncomment this for the local storage.
-//create function that will make local storage. 
-//this event listener is waiting for the person to click on a card to save it to local storage 
-function saveRecipe() {
 
-}
-function myRecipes(event) {
-    event.preventDefault();
-    const savingRecipes = [];
-    const savingRecipesKey = 'favorites';
-    localStorage.setItem(savingRecipesKey, savingRecipes);
-
-    savingRecipes.push(titleEl);
-
-
-    // localStorage.getItem(savingRecipesKey);
-
-    console.log(localStorage);
-
-}
