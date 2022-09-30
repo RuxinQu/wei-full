@@ -23,18 +23,15 @@ $(document).ready(() => {
     }
 
     // save the recipe id to localStorage with the relavent title as key
-    let myRecipes = [];
     const saveRecipeId = (result) => {
         for (let x = 0; x < result.length; x++) {
             const idKey = result[x].title;
             const idValue = result[x].id;
             localStorage.setItem(idKey, idValue);
             console.log(idKey);
-            myRecipes.push(JSON.parse(localStorage.getItem('idKey')));
-            localStorage.setItem('idKey', JSON.stringify(myRecipes));
-            console.log(localStorage);
-    }}
 
+        }
+    }
 
     // create empty search result cards 
     const createCards = () => {
@@ -122,3 +119,22 @@ $(document).ready(() => {
 })
 
 
+
+//Dorian uncomment this for the local storage.
+//create function that will make local storage. 
+//this event listener is waiting for the person to click on a card to save it to local storage 
+// const myRecipes = document.getElementsByClassName('saved');
+
+
+// function myRecipies() {
+   
+//     const savingRecipes = [];
+//     const idKey = result[x].title;
+//     localStorage.setItem(idKey, JSON.stringify(savingRecipes));
+//     console.log(localStorage.getItem(idKey));
+    
+// }
+
+// '.card'.addEventListener('click', '.card');
+
+// renderMyRecipes();
