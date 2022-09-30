@@ -33,24 +33,6 @@ $(document).ready(() => {
         }
     }
 
-    //   let favoriteArr = JSON.parse(localStorage.getItem('favorite')) || [];
-
-    //   const saveRecipes = (recipes) => {
-    //     $('.saved').text('recipes');
-    //     if (favoriteArr.include(recipes)) {
-    //         return ''
-    //     } else {
-    //         favoriteArr.push(recipes);
-    //         const recipeEl = $('<div class="recipe-value"> ${recipes} </div>')
-    //         recipeEl.attr('id', `${recipes}`)
-    //     }
-    //   }
-
-
-
-    // click on key set item to favorite 
-    // value is the title and the id
-
     // create empty search result cards 
     const createCards = () => {
         const left = $('<i class="before fa fa-angle-left" style="font-size:24px"></i>')
@@ -136,18 +118,23 @@ $(document).ready(() => {
 
 })
 
+
+
+//Dorian uncomment this for the local storage.
 //create function that will make local storage. 
 //this event listener is waiting for the person to click on a card to save it to local storage 
-const myRecipes = document.getElementsByClassName('saved');
+// const myRecipes = document.getElementsByClassName('saved');
 
 
-function myRecipies() {
-    const savingRecipes = [];
-    const favKey = result[x].title;
-    console.log(savingRecipes);
-    console.log(favKey);
+// function myRecipies() {
+   
+//     const savingRecipes = [];
+//     const idKey = result[x].title;
+//     localStorage.setItem(idKey, JSON.stringify(savingRecipes));
+//     console.log(localStorage.getItem(idKey));
+    
+// }
 
-}
-myRecipes.addEventListener('click', '.card');
+// '.card'.addEventListener('click', '.card');
 
-renderMyRecipes();
+// renderMyRecipes();
