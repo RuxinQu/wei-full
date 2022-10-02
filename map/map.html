@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Restaurant</title>
+    <title>Wei Full: Restaurant</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/icon.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
         #map {
-            height: 450px;
+            height: 400px;
             width: 100%;
             border-radius: 0 0 10px 10px;
         }
@@ -22,9 +23,10 @@
 <body>
     <header>
         <h1 class="pt-5 has-text-centered">Find a restaurant! </h1>
+        <p>Enter your location and see the nearby restaurant on the map</p>
     </header>
     <form>
-        <input id="input">
+        <input id="input" placeholder="Enter your address here. eg: Seattle">
         <div id="map"></div>
     </form>
     <footer>
@@ -34,6 +36,7 @@
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaByHIVWRDbEfoeZkQcrLQg1upeS4Lza0&libraries=places&callback=initMap">
         </script>
+    
     <script src="./script.js"></script>
 </body>
 

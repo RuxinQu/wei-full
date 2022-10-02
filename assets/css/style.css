@@ -1,26 +1,23 @@
 :root {
     --bg-header-footer: rgba(0, 0, 0, 0.459);
     --font-color: #f5f5dc;
-    --bg-card:hsla(165, 33%, 64%, 0.95);
-}
-
-body {
-    font-family: 'Courgette', sans-serif;
-}
-
-.saved {
-display: block;
-padding: 5px;
-margin: 5px;
-max-width: 150px;
-font-size: 20px;
+    --bg-card: hsla(165, 33%, 64%, 0.95);
 }
 
 html {
     font-size: 16px;
 }
 
-body {
+h2 {
+    font-size: 3rem;
+
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+.main-page-body {
     font-family: 'Courgette', sans-serif;
 }
 
@@ -36,35 +33,27 @@ body {
     opacity: 0.7;
 }
 
-h2 {
-    font-size: 3rem;
-}
-
-h4 {
-    font-size: 1.4rem;
-}
-
-p {
-    font-size: 2rem;
-}
-
 .main-container {
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     position: relative;
-
 }
 
-header {
+.main-page-header {
     color: var(--font-color);
     padding: 1.5rem;
     background-color: var(--bg-header-footer);
+}
+
+.main-page-header h1 {
+    font-size: 3rem;
 }
 
 .card {
     width: 250px;
     height: 250px;
     border-radius: 10px;
-    background-color:var(--bg-card);
+    background-color: var(--bg-card);
     margin: 10px;
 
 }
@@ -80,24 +69,25 @@ header {
     background-color: var(--bg-header-footer);
 }
 
+.main-page-footer p {
+    font-size: 1.2rem;
+}
+
 .main-page-footer span {
     font-weight: 1000;
 }
 
-.main-page-footer a{
-    color: var(--font-color);
-}
-.main-page-footer a:hover{
-    color: var(--bg-card);
-}
 @media only screen and (max-width: 900px) {
     .card {
         width: 200px;
         height: 200px;
     }
 
+    .main-page-header h1 {
+        font-size: 2rem;
+    }
+
     h2 {
         font-size: 1.5rem;
     }
 }
-
