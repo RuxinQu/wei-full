@@ -2,8 +2,8 @@
 Title: Wei-Full
 
 Decription
-Helping the user decide weather they should stay home and cook or go out to eat.
-The website gives users the option of "Staying in" or "go out!". With the use of api's we are able to give the user information from servers. When user selects "go out!", they are able to search using google places api a name or address of a place they want to go. When the user selects "Staying in", users are able to search up an ingredent and the user is presented with a few recipe options. 
+Our websit was created to help the user decide weather they should stay home and cook or go out to eat.
+The website gives users the option of "Stay in" or "go out". the site pulls information using google places api and spoonacular api. When user selects "Go out", they are able to search using google places api a name or address of a place they want to go. When the user selects "Stay in", users are able to search up an ingredent and the user is presented with a few recipe options. 
 
 
 How to use:
