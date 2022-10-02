@@ -2,27 +2,13 @@ $(document).ready(() => {
     const apiKey = `6e8b2acac15a42fc99b75f6f8e92662f`;
     const apiKey2 = `0abc5e5eba504379adc2ea1c904d41f2`
     const baseUrl = `https://api.spoonacular.com`
-    const userRecipesDiv = document.querySelector('#userRecipes');
-    var storedRecipes = localStorage.getItem('userRecipes');
-
-    if (!storedRecipes) {
-        storedRecipes = [];
-    } else {
-        storedRecipes = JSON.parse(storedRecipes);
-    }
-
-    function saveRecipe(recipeValue) {
-        storedRecipes.push(recipeValue);
-        localStorage.setItem('userRecipes', JSON.stringify(storedRecipes))
-        
-        
-    }
+    let recipeArr = JSON.parse(localStorage.getItem('recipe')) || [];
 
     // the fetch request
     const findByIngredient = async () => {
         const ingredient = $('#ingredient').val();
         const endPoint = `/recipes/findByIngredients`;
-        const requestParams = `?apiKey=${apiKey}&ingredients=${ingredient}&number=6`;
+        const requestParams = `?apiKey=${apiKey2}&ingredients=${ingredient}&number=6`;
         const urlToFetch = `${baseUrl}${endPoint}${requestParams}`;
         try {
             const response = await fetch(urlToFetch);
@@ -43,8 +29,6 @@ $(document).ready(() => {
             const idKey = result[x].title;
             const idValue = result[x].id;
             localStorage.setItem(idKey, idValue);
-            console.log(idKey);
-
         }
     }
 
@@ -64,6 +48,8 @@ $(document).ready(() => {
     // render the title and image from the fetch response to the page
     const renderIngredientResult = (result, index) => {
         for (let x = 0; x < 3; x++) {
+            const addIcon = $('<i class="add fa-solid fa-circle-plus"></i>')
+            const alert = $('<p class="alert hide"></p>')
             const titleEl = $(`<h3>`);
             titleEl.text(result[index].title).addClass('card-title')
             const img = $('<img>');
@@ -72,19 +58,10 @@ $(document).ready(() => {
                 alt: 'recipe image',
                 style: 'width: 200px; height: 200px;'
             }).addClass('card-img');
-            const button = $('<button>');
-            button.addClass('saveBtn').text('Save for later');
-            $(`#card${x + 1}`).append(titleEl).append(img).append(button);
+
+            $(`#card${x + 1}`).append(addIcon).append(alert).append(titleEl).append(img);
             index += 1;
-            // button.click(myRecipes);
-            function handleSaveButtonClick() {
-                saveRecipe(result[index]);
-            }
-            button.click(handleSaveButtonClick);
-            // add event handler function 
-
         }
-
     }
 
     // when click on each card, take the title from the triggered event and get the recipe value based on the title(the key in localStorage)
@@ -93,6 +70,36 @@ $(document).ready(() => {
         const idValue = localStorage.getItem(idKey);
         const url = `https://spoonacular.com/recipes/${idKey.split(' ').join('-')}-${idValue}`;
         window.open(url);
+    }
+    
+     // when click on the "+", save the target recipe to the dropdown list
+    const renderCurrentRecipe = (recipeContent) => {
+        const idValue = localStorage.getItem(recipeContent);
+        const url = `https://spoonacular.com/recipes/${recipeContent.split(' ').join('-')}-${idValue}`
+        $('.recipe-list').append(`<a target="_blank" href=${url}>${recipeContent}</a>`);
+    }
+   
+    const saveRecipe = (event) => {
+        const recipeContent = $(event.currentTarget).siblings('.card-title').text();
+        if (recipeArr.includes(recipeContent)) {
+            return ''
+        } else {
+            recipeArr.push(recipeContent);
+            localStorage.setItem('recipe', JSON.stringify(recipeArr));
+            renderCurrentRecipe(recipeContent);
+        }
+    }
+
+    //when hover on the 'my recipe' dropdown list, the saved list will show 
+    const renderRecipeList = () => {
+        if (!recipeArr) { return '' }
+        else {
+            $('.recipe-list').append(recipeArr.map((recipe) => {
+                const idValue = localStorage.getItem(recipe);
+                const url = `https://spoonacular.com/recipes/${recipe.split(' ').join('-')}-${idValue}`
+                return `<a target="_blank" href=${url}>${recipe}</a>`
+            }))
+        }
     }
 
     // the search function , when the ingredient is not find, a modal will be issued
@@ -107,7 +114,10 @@ $(document).ready(() => {
         }
     }
 
-    $('.search').on('click', (event) => {
+
+
+    // click on the button or hit Enter will both trigger the event
+    $('.search-btn').on('click', (event) => {
         event.preventDefault();
         $('.output').text('')
         search(0);
@@ -135,31 +145,29 @@ $(document).ready(() => {
         $('.modal').hide();
     })
 
-    //click on the card will trigger the renderDetailLink function and redirect to spoonacular website. Clicking image redirects to spooacular.
-
-    $('.output').on('click', '.card-img', (event) => {
+    //click on the card will trigger the renderDetailLink function and redirect to spoonacular website
+    $('.output').on('click', '.card', (event) => {
         renderDetailLink(event);
     })
 
+    //hover the mouse on "+", will show "add to my recipe"
+    $('.output').on('mouseover', '.add', (event) => {
+        $(event.currentTarget).siblings('.alert').text('Add to my recipe').removeClass('hide').addClass('show');
+    })
+
+    $('.output').on('mouseout', '.add', (event) => {
+        $(event.currentTarget).siblings('.alert').removeClass('show').addClass('hide');
+    })
+
+    //click on the "+" to trigger save recipe event
+    $('.output').on('click', '.add', (event) => {
+        event.stopPropagation();
+        saveRecipe(event);
+        $(event.currentTarget).siblings('.alert').text('Saved!');
+
+    })
+
+    //always render local storage on my recipe dropdown list
+    renderRecipeList()
+
 })
-
-//Dorian uncomment this for the local storage.
-//create function that will make local storage. 
-//this event listener is waiting for the person to click on a card to save it to local storage 
-function saveRecipe() {
-
-}
-function myRecipes(event) {
-    event.preventDefault();
-    const savingRecipes = [];
-    const savingRecipesKey = 'favorites';
-    localStorage.setItem(savingRecipesKey, savingRecipes);
-    
-    savingRecipes.push(titleEl);
-
-
-    // localStorage.getItem(savingRecipesKey);
-    
-    console.log(localStorage);
-
-}

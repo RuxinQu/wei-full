@@ -8,19 +8,22 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: 'Courgette', sans-serif;
-}
-
-h1 {
-    font-size: 3rem;
-    font-family: 'Courgette', sans-serif;
-    color: #fff;
-
 }
 
 header {
+    text-align: center;
     padding-bottom: 1.5rem;
+    color: #fff;
     background-color: rgba(0, 0, 0, 0.255);
+    font-family: 'Courgette', sans-serif;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+header p {
+    font-size: 1.3rem;
 }
 
 form {
@@ -32,15 +35,23 @@ form {
 #input {
     height: 75px;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-radius: 10px 10px 0 0;
 }
 
-footer{
+footer {
     position: absolute;
     bottom: 0;
     right: 20px;
+    font-family: 'Courgette', sans-serif;
 }
-footer a{
+
+footer a {
     color: #fff;
+}
+
+@media only screen and (max-width: 700px) {
+    header h1 {
+        font-size: 2rem;
+    }
 }
