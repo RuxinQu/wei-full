@@ -65,5 +65,4 @@ View the deployed website: https://ruxinqu.github.io/wei-full/
 
 This project is under MIT license
 
-[https://www.gnu.org/licenses/gpl-3.0.txt](https://www.gnu.org/licenses/gpl-3.0.txt)
 
