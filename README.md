@@ -34,7 +34,7 @@ View the deployed website: https://ruxinqu.github.io/wei-full/
 ![map page on tablet](./assets/images/map-ipad.png)![map page on mobile](./assets/images/map-mobile.png)
 
 * ### Stay in:
-1. The user are able to enter **one** ingredient. Then click on the '**Search**' button or press '**Enter**' can both trigger the search. 
+1. The user are able to enter several ingredients and separate each ingredient with comma. Then click on the '**Search**' button or press '**Enter**' can both trigger the search. 
 2. If the recipe isn't found in the database, a **modal** will be issued.
 3. Six recipe options of the ingredient will show up in two pages. Click on '>' can view the next page, and '<' to go back to the previous page.
 4. Click on the recipe box then the user can be taken to the recipe page on spoonacular.
